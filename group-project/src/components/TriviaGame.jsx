@@ -9,17 +9,17 @@ const returnPlainText = (text) => {
   
   function TriviaGame() {
     const [questions, setQuestions] = useState([]); //stores questions from API
-    const [index, setIndex] = useState(0);          //current question
-    const [score, setScore] = useState(0);          //user score
+    const [index, setIndex] = useState(0);          //monitors current question number
+    const [score, setScore] = useState(0);          //monitors user score
     const [gameOver, setGameOver] = useState(false);  //ends the game when questions run out, currently set to 10
     const fetchRef = useRef(false); //prevents unneccesary API calls
   
     //fetches data from the API once the game starts
     useEffect(() => {
-      if (fetchRef.current) return; // Prevent multiple fetch requests
+      if (fetchRef.current) return; // exit if data is already fetched
       fetchRef.current = true; // Mark as fetched
     
-      setTimeout(() => { // Start delay because 
+      setTimeout(() => { // Start delay because the trivia API had a limit of 1 request every 5 seconds
         fetch("https://opentdb.com/api.php?amount=10&category=9&type=multiple")
           .then(response => response.json())
           .then(data => setQuestions(data.results))
@@ -28,16 +28,16 @@ const returnPlainText = (text) => {
     }, []);
     
   
-    if (!questions.length) return <div>Preparing your quiz...</div>; //if questions aren´t loaded
+    if (!questions.length) return <div>Preparing your quiz...</div>; //if questions aren´t ready
     if (gameOver) return <div><h2>Game Over! Your score is: {score} / 10</h2></div>; //when questions run out (10)
   
     const question = questions[index]; //gets the current question
   
     const handleAnswerClick = (answer) => {
       if (answer === question.correct_answer) {
-        setScore(score + 1);
+        setScore(score + 1); //increase score +1 if correct answer
       }
-      if (index + 1 < 10) { // Game ends after 10 questions
+      if (index + 1 < 10) { // Game continues until 10 questions are done
         setIndex(index + 1);
       } else {
         setGameOver(true);
