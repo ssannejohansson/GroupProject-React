@@ -1,13 +1,20 @@
-import React from "react";
-import TriviaGame from "./components/TriviaGame";
+
+import {BrowserRouter, Routes, Route} from "react-router"
+import LoginRegistration from "./components/LoginRegistration.jsx";
+import TriviaGame from "./components/TriviaGame.jsx";
 
 function App() {
+
+
   return (
-    <div>
-      <h1>React Trivia Game</h1>
-      <TriviaGame />
-    </div>
-  );
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<LoginRegistration/>} />
+        <Route path="/triviagame" element={<TriviaGame/>} />
+        </Routes>
+        </BrowserRouter>
+  )
 }
 
-export default App;
+
+export default App

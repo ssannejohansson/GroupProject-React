@@ -14,7 +14,7 @@ function Login ({formHandle}) {
         e.preventDefault();                                           // Prevents browser from realod/refresh
         const loggeduser = JSON.parse(localStorage.getItem('user'));  // Checks for the user in localStorage
         if (e.target.username.value === loggeduser.username && e.target.password.value === loggeduser.password) { // Checks if username and password is equal to the user stored in localStorage
-            navigate('game');                                         // If login succeeds, the page navigates to game-page
+            navigate('triviagame');                                         // If login succeeds, the page navigates to game-page
         } else {
             alert("Wrong username or password");                      // If not, alert will display
         }

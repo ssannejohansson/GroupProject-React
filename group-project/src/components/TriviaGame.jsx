@@ -50,7 +50,7 @@ const returnPlainText = (text) => {
         {[...question.incorrect_answers, question.correct_answer]
           .sort(() => Math.random() - 0.5) //randomize order of answers
           .map((answer, i) => (
-            <button key={i} onClick={() => handleAnswerClick(answer)}>
+            <button className="trivia" key={i} onClick={() => handleAnswerClick(answer)}>
               {returnPlainText(answer)}
             </button>
           ))}
