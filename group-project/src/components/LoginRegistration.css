@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(./assets/background.jpg) no-repeat; 
+    background-size: cover;
+    background-position: center;
+}
+
+.form-box {
+    position: relative;
+    width: 550px;
+    height: 550px; 
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(30px);
+    border-radius: 50%; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: -30px;
+    margin-bottom: 10px; 
+    font-size: 70px;
+    text-align: center;
+    padding: 10px;
+    font-family: "sacramento", cursive; 
+    color: #fff;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(221, 250, 241),
+        0 0 80px rgb(0, 0, 0),
+        0 0 90px rgb(17, 208, 144),
+        0 0 100px rgb(51, 56, 54),
+        0 0 150px rgb(56, 59, 58);
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+  }
+
+form .input-box {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+}
+
+.input-box input {
+    width: 350px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none; 
+    border: 2px solid #ffffff1a;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px; 
+}
+
+.input-box input:focus {
+    border: 2px solid #ffffff79; 
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: 16px; 
+}
+
+
+form button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+}
+
+form button:hover {
+    background: #e0e0e0;
+}
+
+p {
+    text-align: center;
+}
+
+span {
+    font-weight: bold; 
+    cursor: pointer;
+}

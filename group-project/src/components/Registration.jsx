@@ -1,6 +1,6 @@
 import React from "react"
 import {useNavigate} from "react-router" // Need to be installed with React Router through " npm i react-router " in terminal
-import "./LoginSignup.css"
+import "./LoginRegistration.css"
 import { FaUser, FaLock } from "react-icons/fa"; // Needs to be installed with React Icons through " npm install react-icons --save " in terminal
 
 
