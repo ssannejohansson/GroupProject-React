@@ -31,6 +31,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex-wrap: wrap;
 }
 
 h1 {
@@ -128,4 +129,39 @@ p {
 span {
     font-weight: bold; 
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .form-box {
+         height: 400px;
+         width: 400px; 
+    }
+    
+    .input-box input {
+        width: 240px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .input-box .icon {
+        font-size: 14px;
+    }
+
+    h1 {
+
+        margin-bottom: 0px; 
+        font-size: 50px;
+    }
+
+    form button {
+            width: 100%;
+            height: 35px;
+            font-size: 14px;
+            margin-top: 5px;
+    }
+
+    p, span {
+        font-size: 12px;
+    }
 }
