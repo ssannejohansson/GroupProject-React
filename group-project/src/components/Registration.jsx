@@ -18,7 +18,7 @@ function Registration ({formHandle}) {
           if (!localStorage.getItem("user")) {                          // If "user" is NOT found in localStorage...
             localStorage.setItem("user", JSON.stringify({username:e.target.username.value, password:e.target.password.value})) // ... it sets a new user in localStorage.
             alert ("Registration succeded!")                            // Alert that registration is succeded just to be clear to the user
-            navigate ('game');                                          // When alert "OK" is clicked it navigates to game-page 
+            navigate ('triviagame');                                          // When alert "OK" is clicked it navigates to game-page 
           }
         } if ((e.target.username.value === loggeduser.username)) {      // Checks if the input-username is equal to the stored username
             alert("User already exists");                               // If the username already exists in localStorage, alert will show
