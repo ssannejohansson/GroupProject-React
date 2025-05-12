@@ -8,6 +8,10 @@ body {
   background-image: url(/src/assets/background.jpg);
 }
 
+.preparing {
+  color: #fff; 
+  font-size: 20px; 
+}
 
 .quiz-container {
   min-height: 100vh;
@@ -22,17 +26,20 @@ body {
   font-size: 35px;
   font-weight: bold;
   font-style: normal;
-  color: #FF1493;
+  color: #ff14b5;
+  text-shadow: 1px 1px 1px black; 
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .quiz-card {
+  width: 650px;
+  height: 460px;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 20px;
+  padding: 50px;
 }
 
 .question-number {
@@ -54,7 +61,7 @@ body {
   align-items: center;
 }
 
-.quiz-button {
+#quiz-button {
   background-color: white;
   border: 2px solid transparent;
   border-radius: 25px;
@@ -70,7 +77,7 @@ body {
   position: relative;
 }
 
-.quiz-button::before {
+#quiz-button::before {
   content: '';
   position: absolute;
   top: -2px;
@@ -82,8 +89,43 @@ body {
   z-index: -1;
 }
 
-.quiz-button:hover {
+#quiz-button:hover {
   transform: scale(1.05);
+}
+
+.score {
+  color: #fff;
+  font-size: 16px; 
+  font-weight: bold;
+  margin-top: 10px; 
+}
+
+.gameover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 650px;
+  height: 460px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 50px;
+}
+
+.gameover-title {
+  color: #fff; 
+  font-size: 70px; 
+  text-shadow: 5px 5px 10px black; 
+  padding: 10px; 
+  font-family: "sacramento", cursive; 
+}
+
+.gameover-text {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 5px 5px 10px black; 
 }
 
 
@@ -92,10 +134,11 @@ body {
 /* Small screens*/
 @media (max-width: 640px) {
   .quiz-title {
-    font-size: 1.75rem; 
+    font-size: 2.5rem; 
   }
 
   .quiz-card {
+    width: 400px;
     padding: 1.5rem;
   }
 
@@ -104,7 +147,7 @@ body {
   }
 
   .question-text {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   .quiz-button {

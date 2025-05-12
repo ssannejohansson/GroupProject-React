@@ -23,7 +23,7 @@ function Login ({formHandle}) {
     return (
     <div> 
         <div className="form-box login">
-            <h1>Log in</h1>
+            <h1 className="login-title">Log in</h1>
                 <form onSubmit={(e)=>handleLogin(e)}>
                     <div className="input-box">
                         <input type="text" 

@@ -28,7 +28,7 @@ function Registration ({formHandle}) {
     return (
     <div> 
         <div className="form-box login">
-            <h1>Register</h1>
+            <h1 className="login-title">Register</h1>
                 <form onSubmit={(e)=>handleRegistration(e)}>
                 
                     <div className="input-box">

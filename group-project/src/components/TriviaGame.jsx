@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import "./TriviaGame.css";
 
 // This is to make sure there are no special characters (it returns plain text)
 const returnPlainText = (text) => {
@@ -28,8 +29,8 @@ const returnPlainText = (text) => {
     }, []);
     
   
-    if (!questions.length) return <div>Preparing your quiz...</div>; //if questions aren´t ready
-    if (gameOver) return <div><h2>Game Over! Your score is: {score} / 10</h2></div>; //when questions run out (10)
+    if (!questions.length) return <div className="preparing">Preparing your quiz...</div>; //if questions aren´t ready
+    if (gameOver) return <div className="gameover"><h2 className="gameover-title">Game Over!</h2><h2 className="gameover-text"> Your score is: {score} / 10</h2></div>; //when questions run out (10)
   
     const question = questions[index]; //gets the current question
   
@@ -46,15 +47,25 @@ const returnPlainText = (text) => {
   
     return (
       <div>
-        <h2>{returnPlainText(question.question)}</h2>
+        <div className="quiz-container">
+         
+          <h1 className="quiz-title">Triva Game 2025</h1> 
+          <div className="quiz-card">
+        <h2 className="question-text">{returnPlainText(question.question)}</h2>
+        <div className="options-container"> 
         {[...question.incorrect_answers, question.correct_answer]
           .sort(() => Math.random() - 0.5) //randomize order of answers
           .map((answer, i) => (
-            <button className="trivia" key={i} onClick={() => handleAnswerClick(answer)}>
+         
+           <button className="trivia" id="quiz-button" key={i} onClick={() => handleAnswerClick(answer)}>
               {returnPlainText(answer)}
             </button>
           ))}
-        <p>Current score: {score}</p>
+          </div>
+          
+        <p className="score">Current score: {score}</p>
+        </div>
+        </div>
       </div>
     );
   }
