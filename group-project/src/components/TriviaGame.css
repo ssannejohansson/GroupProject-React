@@ -1,0 +1,146 @@
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  background-image: url(/src/assets/background.jpg);
+}
+
+
+.quiz-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.quiz-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  font-style: normal;
+  color: #FF1493;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.quiz-card {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+}
+
+.question-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-button {
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.quiz-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #FF1493, #8B008B);
+  border-radius: 25px;
+  z-index: -1;
+}
+
+.quiz-button:hover {
+  transform: scale(1.05);
+}
+
+
+/* Media Queries*/
+
+/* Small screens*/
+@media (max-width: 640px) {
+  .quiz-title {
+    font-size: 1.75rem; 
+  }
+
+  .quiz-card {
+    padding: 1.5rem;
+  }
+
+  .question-number {
+    font-size: 1.25rem;
+  }
+
+  .question-text {
+    font-size: 1rem;
+  }
+
+  .quiz-button {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium screens*/
+@media (min-width: 641px) and (max-width: 1024px) {
+  .quiz-title {
+    font-size: 2rem;
+  }
+
+  .quiz-card {
+    padding: 1.75rem;
+  }
+
+  .question-number {
+    font-size: 1.35rem;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .quiz-button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Large screens*/
+@media (min-width: 1024px) {
+  .options-container {
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
