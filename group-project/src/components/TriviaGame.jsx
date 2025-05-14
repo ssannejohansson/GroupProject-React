@@ -60,7 +60,7 @@ const returnPlainText = (text) => {
           <button                     //Sign out button
         className="sign-out-button"
         onClick={onSignOut}
-        aria-label="Sign out of the quiz game"
+        aria-label="Sign out of the quiz gameEEE"
       >
         Sign Out
       </button>
@@ -68,5 +68,6 @@ const returnPlainText = (text) => {
       </div>
     );
   }
+
   
   export default TriviaGame;
