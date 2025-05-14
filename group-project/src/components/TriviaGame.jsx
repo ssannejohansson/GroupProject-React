@@ -21,6 +21,10 @@ const returnPlainText = (text) => {
     const handleRestart = () => {
     navigate (0);
     };
+
+    const onSignOut = () => {
+      navigate (-1);
+    };
   
     //fetches data from the API once the game starts
     useEffect(() => {
@@ -74,6 +78,14 @@ const returnPlainText = (text) => {
         <p className="score">Current score: {score}</p>
         </div>
         </div>
+          <button
+        className="sign-out-button"
+        onClick={onSignOut}
+        aria-label="Sign out of Trivia Game"
+      >
+        Sign Out
+      </button>
+
       </div>
     );
   }
