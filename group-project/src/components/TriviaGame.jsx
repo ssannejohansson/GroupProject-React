@@ -55,6 +55,7 @@ const returnPlainText = (text) => {
             </button>
           ))}
         <p>Current score: {score}</p>
+
       </div>
     );
   }
