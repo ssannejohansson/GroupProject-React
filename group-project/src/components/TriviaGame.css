@@ -147,7 +147,7 @@ body {
   position: relative;
 }
 
-.restart:before {
+.restart:before, .sign-out-button {
   content: '';
   position: absolute;
   top: -2px;
@@ -159,7 +159,7 @@ body {
   z-index: -1;
 }
 
-.restart:hover {
+.restart:hover, .sign-out-button {
   transform: scale(1.05);
 }
 
