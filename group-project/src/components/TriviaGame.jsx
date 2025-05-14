@@ -42,7 +42,13 @@ const returnPlainText = (text) => {
   
     if (!questions.length) return <div className="preparing">Preparing your quiz...</div>; //if questions aren´t ready
     if (gameOver) return <div className="gameover"><h2 className="gameover-title">Game Over!</h2><h2 className="gameover-text"> Your score is: {score} / 10</h2>
-    <button className="restart" onClick={handleRestart}>Restart</button></div>; //when questions run out (10)
+    <button className="restart" onClick={handleRestart}>Restart</button><button
+        className="sign-out-button"
+        onClick={onSignOut}
+        aria-label="Sign out of Trivia Game"
+      >
+        Sign Out
+      </button></div>; //when questions run out (10)
   
     const question = questions[index]; //gets the current question
   
@@ -78,14 +84,6 @@ const returnPlainText = (text) => {
         <p className="score">Current score: {score}</p>
         </div>
         </div>
-          <button
-        className="sign-out-button"
-        onClick={onSignOut}
-        aria-label="Sign out of Trivia Game"
-      >
-        Sign Out
-      </button>
-
       </div>
     );
   }
