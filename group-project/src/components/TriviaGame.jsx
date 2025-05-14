@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import {useNavigate} from "react-router";
 import "./TriviaGame.css";
 
 // This is to make sure there are no special characters (it returns plain text)
@@ -14,6 +15,12 @@ const returnPlainText = (text) => {
     const [score, setScore] = useState(0);          //monitors user score
     const [gameOver, setGameOver] = useState(false);  //ends the game when questions run out, currently set to 10
     const fetchRef = useRef(false); //prevents unneccesary API calls
+
+    const navigate = useNavigate()
+
+    const handleRestart = () => {
+    navigate (0);
+    };
   
     //fetches data from the API once the game starts
     useEffect(() => {
@@ -30,7 +37,8 @@ const returnPlainText = (text) => {
     
   
     if (!questions.length) return <div className="preparing">Preparing your quiz...</div>; //if questions aren´t ready
-    if (gameOver) return <div className="gameover"><h2 className="gameover-title">Game Over!</h2><h2 className="gameover-text"> Your score is: {score} / 10</h2></div>; //when questions run out (10)
+    if (gameOver) return <div className="gameover"><h2 className="gameover-title">Game Over!</h2><h2 className="gameover-text"> Your score is: {score} / 10</h2>
+    <button className="restart" onClick={handleRestart}>Restart</button></div>; //when questions run out (10)
   
     const question = questions[index]; //gets the current question
   

@@ -115,18 +115,56 @@ body {
 
 .gameover-title {
   color: #fff; 
+  text-shadow: 4px 4px 20px black;
   font-size: 70px; 
-  text-shadow: 5px 5px 10px black; 
   padding: 10px; 
   font-family: "sacramento", cursive; 
 }
+
+
 
 .gameover-text {
   font-size: 1.25rem;
   color: white;
   margin-bottom: 1.5rem;
-  text-shadow: 5px 5px 10px black; 
+  text-shadow: 4px 4px 20px black; 
+
 }
+
+.restart {
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.restart:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #FF1493, #8B008B);
+  border-radius: 25px;
+  z-index: -1;
+}
+
+.restart:hover {
+  transform: scale(1.05);
+}
+
+
+
 
 
 /* Media Queries*/
@@ -153,6 +191,14 @@ body {
   .quiz-button {
     padding: 0.65rem;
     font-size: 0.9rem;
+  }
+
+  .gameover {
+    width: 400px; 
+  }
+
+  .gameover-title {
+    font-size: 60px; 
   }
 }
 

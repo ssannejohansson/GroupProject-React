@@ -132,7 +132,7 @@ span {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640) {
     .form-box {
          height: 400px;
          width: 400px; 
