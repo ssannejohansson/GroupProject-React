@@ -121,8 +121,6 @@ body {
   font-family: "sacramento", cursive; 
 }
 
-
-
 .gameover-text {
   font-size: 1.25rem;
   color: white;
@@ -162,9 +160,6 @@ body {
 .restart:hover {
   transform: scale(1.05);
 }
-
-
-
 
 
 /* Media Queries*/
