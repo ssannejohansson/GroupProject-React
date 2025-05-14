@@ -56,6 +56,15 @@ const returnPlainText = (text) => {
           ))}
         <p>Current score: {score}</p>
 
+        
+          <button                     //Sign out button
+        className="sign-out-button"
+        onClick={onSignOut}
+        aria-label="Sign out of the quiz game"
+      >
+        Sign Out
+      </button>
+
       </div>
     );
   }
